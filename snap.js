@@ -46,6 +46,7 @@
             }
         },
         eventList = {},
+        _this = this,
         utils = {
             hasTouch: ('ontouchstart' in doc.documentElement || win.navigator.msPointerEnabled),
             eventType: function(action) {
@@ -77,7 +78,7 @@
             },
             dispatchEvent: function(type) {
                 if (typeof eventList[type] === 'function') {
-                    return eventList[type](cache);
+                    return eventList[type](_this, cache);
                 }
             },
             vendor: function(){
