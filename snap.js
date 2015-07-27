@@ -440,6 +440,8 @@
                                 ) {
                                     action.translate.easeTo(settings.maxPosition); // Open Left
                                 }
+                                cache.dragWatchers.state = 'right';
+                                utils.dispatchEvent('open');
                             } else {
                                 action.translate.easeTo(0); // Close Left
                             }
@@ -455,6 +457,8 @@
                                 ) {
                                     action.translate.easeTo(settings.minPosition); // Open Right
                                 }
+                                cache.dragWatchers.state = 'left';
+                                utils.dispatchEvent('open');
                             } else {
                                 action.translate.easeTo(0); // Close Right
                             }
